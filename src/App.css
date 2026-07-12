@@ -1,0 +1,70 @@
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cartIcon:hover{
+    border-bottom: 4px solid #ff9811;
+}
+
+/* .home-container{
+   background: linear-gradient(
+    to top,
+    rgba(214, 53, 53, 0.75) 0%,
+    rgba(122, 50, 50, 0.4) 40%,
+    rgba(238, 219, 219, 0.05) 100%
+  );
+} */
+
+.home-container {
+   background: linear-gradient(
+    to top,
+    rgba(214, 53, 53, 0.493) 0%,
+    rgba(122, 50, 50, 0.247) 40%,
+    rgba(238, 219, 219, 0.74) 60%
+  );
+}
+
+.card-home-container{
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+}
+
+.card-gradient{
+ background: linear-gradient(
+    to top,
+    rgba(214, 53, 53, 0.493) 0%,
+    rgba(122, 50, 50, 0.247) 40%,
+    rgb(240, 234, 234) 100%
+  );
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.959) 0%,
+    rgba(0, 0, 0, 0.534) 40%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items:end;
+}
+
+.card-overlay{
+  color: white;
+}
+
+.card-home-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-home-container::-webkit-scrollbar-thumb {
+  background-color: #802323;
+  border-radius: 10px;
+}
