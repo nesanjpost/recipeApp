@@ -22,13 +22,11 @@ const Cart = () => {
         cart.map((cartItem) => (
           <div className="card card-gradient mb-3 m-3 col-lg-7 rounded-5 shadow-lg" key={cartItem.id}>
             <div className="row g-2">
-              {/* <div className="col-lg-2"> */}
                 <img
                   src={cartItem.image}
                   className="col-lg-3 rounded-5 p-2"
                   alt="Image"
                 />
-              {/* </div> */}
               <div class="col-lg-8">
                 <div className="card-body d-flex justify-content-around align-items-center">
                   <div className="col-8">

@@ -41,7 +41,7 @@ const HomePageContent = () => {
 
   return (
     <>
-      <div className="home-container mt-4 p-4">
+      <div className="home-container p-5">
         <div className="card-home-container container d-flex gap-5 rounded-4 shadow-bottom">
           {recipe.map((recipe) => (
             <div

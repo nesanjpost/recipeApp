@@ -13,10 +13,10 @@ function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CartProvider>
-        <RecipeProvider basename="/recipeApp"> 
+        <RecipeProvider> 
           <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
               <Route path="/recipes" element={<Recipes />} />
               <Route path="/recipe/:id" element={<RecipeDetails />} />
               <Route path="/cart" element={<Cart />} />
