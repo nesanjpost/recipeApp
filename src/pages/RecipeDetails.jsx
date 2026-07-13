@@ -3,22 +3,6 @@ import { useParams } from "react-router-dom";
 import { getRatingColor } from "../utils/rating";
 import { CardButton } from "../components/CardButton";
 
-// name
-// ingredients: [];
-// instructions: [];
-// prepTimeMinutes: 20;
-// cookTimeMinutes: 15;
-// servings: 4;
-// difficulty: "easy";
-// cuisine: "Italian";
-// caloriesPerServing: 300;
-// tags: ["pizza", "Italian"];
-// userId: 166;
-// image: "";
-// rating: 4.6;
-// reviewCount: 98;
-// mealType: ["Dinner"]
-
 const RecipeDetails = () => {
   const [getRecipe, setGetRecipe] = useState([]);
   const param = useParams();
@@ -39,19 +23,19 @@ const RecipeDetails = () => {
         <div className="col-lg-6">
           <div className="d-flex justify-content-between gap-2">
             <span className="h1 text-dark-emphasis">{getRecipe.name}</span>
-            <div className="d-flex mt-2 col-4 h-100 align-items-center">
-              <span
+            <div className="d-flex flex-row m-2 gap-1 h-25 col-4">
+              <small
                 className={`text-light rounded-1 p-1 ${getRatingColor(getRecipe.rating)}`}
               >
                 {getRecipe.rating}
                 <i className="bi bi-star-fill p-1"></i>
-              </span>
-              <span className="fw-bold mx-2 border-bottom align-center">
-                {getRecipe.reviewCount}
-              </span>
-              <span className="fst-italic border-bottom text-secondary">
+              </small>
+              <div>
+                <small className="fw-bold border-bottom">{getRecipe.reviewCount}{" "}</small>
+                <small className="fst-italic border-bottom text-secondary">
                 Reviews
-              </span>
+              </small>
+              </div>
             </div>
           </div>
           <div className="d-flex flex-column">
