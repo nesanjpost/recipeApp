@@ -4,18 +4,17 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const {cartCount} = useContext(CartContext)
-  // const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
     return (
-    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-danger body-bg-rgb shadow-lg">
-      <div class="container-fluid d-flex justify-content-between px-5">
+    <nav className="navbar navbar-expand-sm sticky-top navbar-dark bg-danger body-bg-rgb shadow-lg">
+      <div className="container-fluid d-flex justify-content-between px-5">
            <Link
           className="navbar-brand text-decoration-none fw-bold text-light"
           to={`/`}
         >
-          FoodCart
+          RecipeHub
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -23,9 +22,9 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <Link className="nav-link text-decoration-none text-light" to={`/`}>
               Home
