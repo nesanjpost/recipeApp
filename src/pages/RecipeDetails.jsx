@@ -18,9 +18,12 @@ const RecipeDetails = () => {
   }, [param]);
 
   return (
-    <div className="container p-4">
+    <div className="container p-4 d-flex flex-column gap-2">
           <div className="d-flex gap-2">
-            <span className="h2 text-dark-emphasis">{getRecipe.name}</span>
+            <span className="d-flex flex-column text-dark-emphasis">
+              <span className="h2 mb-0">{getRecipe.name}</span>
+            <small>{getRecipe?.mealType?.join(", ")}</small>
+            </span>
             <div className="m-2 gap-1 col-3 text-end h-50">
               <small
                 className={`text-light rounded-1 p-1 ${getRatingColor(getRecipe.rating)}`}
