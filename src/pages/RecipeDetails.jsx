@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getRatingColor } from "../utils/rating";
 import { CardButton } from "../components/CardButton";
+import { RecipeContext } from "../context/RecipeContext";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const RecipeDetails = () => {
   const [getRecipe, setGetRecipe] = useState([]);
+  const {loading} = useContext(RecipeContext)
   const param = useParams();
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -16,6 +19,8 @@ const RecipeDetails = () => {
     };
     fetchRecipe();
   }, [param]);
+
+  if(loading) return <LoadingSpinner />
 
   return (
     <div className="container p-4 d-flex flex-column gap-2">

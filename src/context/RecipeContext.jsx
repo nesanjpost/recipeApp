@@ -10,13 +10,14 @@ export const RecipeProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [skip, setSkip] = useState(0);
   const [total, setTotal] = useState(0);
+  const [search, setSearch] = useState("");
 
-  const limit = 8;  
+  const limit = 8;
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const data = await getRecipes(limit, skip)
+        const data = await getRecipes(limit, skip);
         setRecipes((prev) => [...prev, ...data.recipes]);
         setTotal(data.total);
       } catch (error) {
@@ -30,7 +31,17 @@ export const RecipeProvider = ({ children }) => {
 
   return (
     <RecipeContext.Provider
-      value={{ recipes, loading, error, skip, setSkip, total, limit }}
+      value={{
+        recipes,
+        loading,
+        error,
+        skip,
+        setSkip,
+        total,
+        limit,
+        search,
+        setSearch,
+      }}
     >
       {children}
     </RecipeContext.Provider>

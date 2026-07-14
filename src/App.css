@@ -56,3 +56,14 @@
   background-color: transparent;
   border-radius: 10px;
 }
+
+.search-box input{
+ width: 100%;
+ border-radius: 5px;
+ border: 1px solid #dc3545
+}
+
+.search-box input:focus{
+  border: 2px solid #dc3545;
+  outline: none;
+}

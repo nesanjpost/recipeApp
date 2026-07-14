@@ -4,7 +4,6 @@ import { CartContext } from "../context/CartContext";
 export const CardButton = ({ recipe }) => {
     const {cart, addToCart, increaseQuantity, decreaseQuantity} = useContext(CartContext);
     const cartItem = cart.find((item) => item.id === recipe.id);
-    console.log("decreaseQuantity", decreaseQuantity);
 return (
     cartItem ? (
         <div className="d-flex w-100 m-auto align-items-center shadow justify-content-center bg-danger text-light rounded-3">

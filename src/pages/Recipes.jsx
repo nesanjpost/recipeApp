@@ -7,11 +7,15 @@ import SelectionTabs from "../components/SelectionTabs";
 import LoadingSpinner from "../components/LoadingSpinner";
 import LoadMore from "../components/LoadMore";
 import { getAllRecipes } from "../services/recipeServices";
+import SearchBar from "../components/SearchBar";
+import { filterRecipes } from "../utils/filterRecipes";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [selectedMealType, setSelectedMealType] = useState("All");
-  const { loading, error, setSkip, total, limit } = useContext(RecipeContext);
+  const { loading, error, setSkip, total, limit, search } =
+    useContext(RecipeContext);
+    const filteredRecipes = filterRecipes(recipes, search, selectedMealType)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,23 +26,21 @@ const Recipes = () => {
         console.log(error, "error");
       }
     };
-    fetchData()
+    fetchData();
   }, []);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <h3>{error}</h3>;
 
-  const filteredRecipes =
-    selectedMealType === "All"
-      ? recipes
-      : recipes.filter((recipe) => recipe.mealType.includes(selectedMealType));
-
   return (
     <>
-      <div className="mt-4 p-4">
-        <p className="h1 p-2 text-bg-danger text-center shadow rounded-2">
+      <div className="container p-4">
+        <p className="h1 p-2 mb-4 fw-bold text-danger bg-danger-subtle text-center rounded-2">
           Recipe List
         </p>
+        <div className="">
+          <SearchBar />
+        </div>
         <SelectionTabs
           selectedMealType={selectedMealType}
           setSelectedMealType={setSelectedMealType}

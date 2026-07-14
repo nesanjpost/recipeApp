@@ -31,8 +31,6 @@ const HomePageContent = () => {
     return acc;
   }, {});
 
-  console.log("groupedRecipe", Object.entries(groupedRecipe));
-
   if (loading) return <LoadingSpinner />;
   if (error) return <h3>{error}</h3>;
 
