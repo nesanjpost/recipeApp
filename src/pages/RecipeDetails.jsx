@@ -19,11 +19,9 @@ const RecipeDetails = () => {
 
   return (
     <div className="container p-4">
-      <div className="d-flex justify-content-between w-100">
-        <div className="col-lg-6">
-          <div className="d-flex justify-content-between gap-2">
-            <span className="h1 text-dark-emphasis">{getRecipe.name}</span>
-            <div className="d-flex flex-row m-2 gap-1 h-25 col-4">
+          <div className="d-flex gap-2">
+            <span className="h2 text-dark-emphasis">{getRecipe.name}</span>
+            <div className="m-2 gap-1 col-3 text-end h-50">
               <small
                 className={`text-light rounded-1 p-1 ${getRatingColor(getRecipe.rating)}`}
               >
@@ -50,20 +48,18 @@ const RecipeDetails = () => {
               ))}
             </span>
             <div className="p-1 gap-2 d-flex text-light">
-              <span className="bg-danger rounded p-1 px-2">
+              <small className="bg-danger rounded p-1 px-2">
                 ⏱️ {getRecipe.prepTimeMinutes} mins
-              </span>
-              <span className="bg-danger rounded p-1 px-2">
+              </small>
+              <small className="bg-danger rounded p-1 px-2">
                 🍽️ Serving {getRecipe.servings}
-              </span>
-              <span className="bg-danger rounded p-1 px-2">
+              </small>
+              <small className="bg-danger rounded p-1 px-2">
                 🔥 Calories: {getRecipe.caloriesPerServing}
-              </span>
+              </small>
             </div>
-          </div>
-        </div>
       </div>
-      <div className="card-gradient mt-4 p-3 d-flex flex-column rounded-5 shadow-lg flex-lg-row gap-2">
+      <div className="card-gradient mt-4 p-3 d-flex flex-column rounded-5 shadow-lg flex-lg-row gap-5">
         <div className="col-12 col-lg-4">
           <img
             className="rounded-5 shadow"
@@ -75,19 +71,19 @@ const RecipeDetails = () => {
           <CardButton recipe={getRecipe} />
           </div>
         </div>
-        <div className="container col-12 col-lg-8 d-flex flex-column align-items-end">
+        <div className="d-flex flex-column">
           <div>
-            <p className="h3 border-bottom text-danger">Instructions</p>
+            <p className="h3 text-danger">Instructions</p>
             <ul className="list py-2">
               {getRecipe.instructions?.map((instruction, index) => (
-                <li key={index} className="border-bottom text-secondary">
+                <li key={index} className=" text-secondary">
                   {instruction}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="h3 border-bottom text-danger">Ingredients</p>
+            <p className="h3 text-danger">Ingredients</p>
             <div className="d-flex flex-wrap py-2">
               {getRecipe.ingredients?.map((instruction, index) => (
                 <span
