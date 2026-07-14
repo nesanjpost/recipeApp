@@ -20,7 +20,7 @@ const Cart = () => {
         </div>
       ) : (
         cart.map((cartItem) => (
-          <div className="card card-gradient mb-3 m-3 col-lg-7 rounded-5 shadow-lg" key={cartItem.id}>
+          <div className="card mb-3 m-3 col-lg-7 rounded-5 shadow-lg" key={cartItem.id}>
             <div className="row g-2">
                 <img
                   src={cartItem.image}

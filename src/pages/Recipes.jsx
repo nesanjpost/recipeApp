@@ -5,7 +5,6 @@ import { CardButton } from "../components/CardButton";
 import { RecipeContext } from "../context/RecipeContext";
 import SelectionTabs from "../components/SelectionTabs";
 import LoadingSpinner from "../components/LoadingSpinner";
-import LoadMore from "../components/LoadMore";
 import { getAllRecipes } from "../services/recipeServices";
 import SearchBar from "../components/SearchBar";
 import { filterRecipes } from "../utils/filterRecipes";
@@ -13,9 +12,9 @@ import { filterRecipes } from "../utils/filterRecipes";
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [selectedMealType, setSelectedMealType] = useState("All");
-  const { loading, error, setSkip, total, limit, search } =
-    useContext(RecipeContext);
-    const filteredRecipes = filterRecipes(recipes, search, selectedMealType)
+  const { loading, error, search } = useContext(RecipeContext);
+
+  const filteredRecipes = filterRecipes(recipes, search, selectedMealType);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,11 +84,6 @@ const Recipes = () => {
             </div>
           ))}
         </div>
-        <LoadMore
-          loading={loading}
-          hasMore={recipes.length < total}
-          onLoadMore={() => setSkip((prev) => prev + limit)}
-        />
       </div>
     </>
   );

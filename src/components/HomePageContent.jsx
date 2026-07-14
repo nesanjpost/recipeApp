@@ -36,14 +36,14 @@ const HomePageContent = () => {
 
   return (
     <>
-      <div className="home-container pt-4">
+      <div className=" pt-4">
         {Object.entries(groupedRecipe).map(([mealType, recipe]) => (
           <div className="container">
             <div className="mb-4 text-danger text-center">
               <span className="h2 text-uppercase fw-bold">{mealType}</span>
             </div>
             <div
-            className="card-home-container d-flex gap-4 rounded-4 shadow-bottom">
+            className="card-home-container container d-flex gap-4 rounded-4 shadow-bottom">
               {recipe.map((recipe) => (
                 <div
                   key={recipe.id}

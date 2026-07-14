@@ -5,7 +5,7 @@ import { getRecipes } from "../services/recipeServices";
 export const RecipeContext = createContext();
 
 export const RecipeProvider = ({ children }) => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipeData, setRecipeData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [skip, setSkip] = useState(0);
@@ -18,7 +18,7 @@ export const RecipeProvider = ({ children }) => {
     const fetchRecipes = async () => {
       try {
         const data = await getRecipes(limit, skip);
-        setRecipes((prev) => [...prev, ...data.recipes]);
+        setRecipeData((prev) => [...prev, ...data.recipes]);
         setTotal(data.total);
       } catch (error) {
         setError(error);
@@ -32,7 +32,7 @@ export const RecipeProvider = ({ children }) => {
   return (
     <RecipeContext.Provider
       value={{
-        recipes,
+        recipeData,
         loading,
         error,
         skip,
