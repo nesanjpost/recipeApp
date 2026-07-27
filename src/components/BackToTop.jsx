@@ -20,7 +20,7 @@ const BackToTop = () => {
     <div className='text-center pb-4'>
        {
         showbutton && 
-         <button className='btn text-danger back-to-top' 
+         <button className='btn text-danger back-to-top'
          onClick={scrollToTop}><i class="bi fs-1 bi-arrow-up-circle"></i></button>
        }
     </div>
